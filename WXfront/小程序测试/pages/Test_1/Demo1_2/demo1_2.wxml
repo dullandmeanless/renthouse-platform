@@ -1,0 +1,16 @@
+<input placeholder="请输入要操作的数" bindinput="getNum"></input>
+<button bindtap="add">添加</button>
+<button bindtap="delete">删除</button>
+<view>
+  <text>数组：{{nums}}</text>
+  <view>--------------</view>
+  <view id="time">还有{{hour}}小时{{minute}}分钟{{second}}秒</view>
+  <view id="time">{{time}}</view>
+</view>
+
+<view>
+  <view class="out">
+    <view class="inside"> </view>
+  </view>
+
+</view>

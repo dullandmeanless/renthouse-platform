@@ -1,0 +1,43 @@
+/* pages/order/order.wxss */
+.view_fengexian{
+  width:96%;
+  height:5rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0rpx 2% 0rpx 2%;
+  
+}
+
+.text_fengexian{
+  font-size: 25rpx;
+  color: #FFA54F;
+  margin:0rpx 2% 0rpx 2%
+}
+
+.divLine{
+  margin-top: 20rpx;
+  margin-left: 37rpx;
+  background: #FFA54F;
+  width: 90%;
+  height: 2rpx;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.image_size{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.button{
+  margin-top: 50rpx;
+  background: #FFA54F;
+}
+
+.text_1{
+  margin-left: 20rpx; 
+  size: 60rpx;
+}
