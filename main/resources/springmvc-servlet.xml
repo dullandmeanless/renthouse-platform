@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        https://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd ">
+    <context:component-scan base-package="controller"/>
+    <!--        &lt;!&ndash;    添加处理映射器(用注解开发就不用写)&ndash;&gt;-->
+    <!--        <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"></bean>-->
+    <!--        &lt;!&ndash;    添加处理器适配器(用注解开发就不用写)&ndash;&gt;-->
+    <!--        <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"></bean>-->
+    <!-- 让Spring MVC不处理静态资源 .css .mp3 .mp4 .html .js-->
+    <mvc:default-servlet-handler></mvc:default-servlet-handler>
+    <!--    支持mvc注解驱动-->
+    <mvc:annotation-driven>
+        <!--        JSON乱码问题配置-->
+        <mvc:message-converters register-defaults="true">
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <constructor-arg value="UTF-8"></constructor-arg>
+            </bean>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="objectMapper">
+                    <bean class="org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean">
+                        <property name="failOnEmptyBeans" value="false"></property>
+                    </bean>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+    <!--    视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          id="InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/gotoTest"/>
+            <bean class="MyInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+</beans
+>
