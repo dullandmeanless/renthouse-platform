@@ -1,0 +1,87 @@
+<view class="bg-img bg-mask padding-tb-xl" style="background-image: url('../../img/R-C.jpg');height: 414rpx;">
+  <view class="padding-xl text-white">
+    <view class="padding-xs text-xl">
+      提供良好的停泊场地保护您的爱车！
+    </view>
+    <view class="padding-xs">
+      Provide a good parking place to protect your car! 
+    </view>
+  </view>
+</view>
+
+<view class="divLine">
+  <text class="text_fengexian"></text>
+</view>
+
+<view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <image class="image_size" src="../../img/3.1-价格.png"></image>
+    <text class="text_1">价格</text> 
+  </view>
+  <view wx:if=""></view>
+  <view class="action">
+    5元/小时
+  </view>
+</view>
+<view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <image class="image_size" src="../../img/汽车.png"></image>
+    <text class="text_1">总车位</text> 
+  </view>
+  <view class="action">
+    {{carNum}}
+  </view>
+</view>
+
+<view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <image class="image_size" src="../../img/停车位.png"></image>
+    <text class="text_1">剩余车位</text> 
+  </view>
+  <view class="action">
+    {{unUse}}
+  </view>
+</view>
+
+<view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <image class="image_size" src="../../img/日历.png"></image>
+    <text class="text_1">停车时间</text> 
+  </view>
+  <view class="action">
+    <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+      <text>{{date}}::</text>
+    </picker>
+   
+    <picker mode="time" value="{{time}}" bindchange="bindTimeChange">
+      <text>{{time}}</text>
+    </picker>
+    
+  </view>
+    
+
+
+</view>
+
+
+
+
+<view class="cu-modal {{modalName=='Image'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="bg-img" style="background-image: url('https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg');height:200px;">
+    111111111
+      <view class="cu-bar justify-end text-white">
+        <view class="action" bindtap="hideModal">
+          <text class="cuIcon-close "></text>
+        </view>
+      </view>
+    </view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub  solid-left" bindtap="hideModal">我知道了</view>
+    </view>
+  </view>
+</view>
+
+<view class="">
+    <button class="button" bindtap="showModal" data-target="Image">预约车位</button>
+</view>

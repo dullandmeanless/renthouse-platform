@@ -1,0 +1,19 @@
+.out{
+  width: 200px;
+  height: 200px;
+  background: red;
+  border-radius: 100px;
+}
+
+.inside{
+  width: 150px;
+  height: 150px;
+  background: white;
+  border-radius: 75px;
+}
+
+#time{
+  text-align: center;
+  color: cadetblue;
+  font-size: large;
+}

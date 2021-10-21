@@ -1,0 +1,36 @@
+
+
+  <view class="cu-list menu {{menuBorder?'sm-border':''}} {{menuCard?'card-menu margin-top':''}}">
+    
+    <view class="cu-item {{menuArrow?'arrow':''}}" bindtap="ToUserInfo">
+        <text class="cuIcon-discoverfill text-orange"></text>
+        <text class="text_list">个人信息</text>
+    </view>
+    
+    <view class="cu-item {{menuArrow?'arrow':''}}">
+      <navigator url="../Test_1/wetest/demo" >
+        <text class="cuIcon-discoverfill text-orange"></text>
+        <text class="text-grey">连接测试</text>
+      </navigator>
+    </view>
+
+    <view class="cu-item {{menuArrow?'arrow':''}}">
+        <text class="cuIcon-discoverfill text-orange"></text>
+        <text class="text-grey" bindtap="getStorage">测试本地缓存数据</text>
+    </view>
+
+
+    <view class="cu-item {{menuArrow?'arrow':''}}">
+        <text class="cuIcon-discoverfill text-orange"></text>
+        <text class="text-grey" bindtap="getMessage">测试停车位</text>
+    </view>
+    
+    <view class="cu-item {{menuArrow?'arrow':''}}">
+        <text class="cuIcon-discoverfill text-orange"></text>
+        <text class="text-grey" bindtap="getMessage">111</text>
+    </view>
+    
+
+
+  </view>
+

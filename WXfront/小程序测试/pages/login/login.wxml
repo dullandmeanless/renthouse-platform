@@ -1,0 +1,18 @@
+<!--pages/login/login.wxml-->
+<view class="root">
+  <view class="text" wx:if="{{!userIsLogin}}">
+    <text> </text>
+    <text> </text>
+    <title>欢迎使用本停车场</title>
+  </view>
+  <view wx:if="{{userIsLogin}}">
+    <image src="{{userInfo.avatarUrl}}" class="image"></image>
+    <view>{{userInfo.nickName}}</view>
+    <button bindtap="inToMain" type="primary">进入主页</button>
+  </view>
+  <view wx:if="{{!userIsLogin}}">
+    <button bindtap="login" class="bu1" type="primary">授权登录</button>
+    
+  </view>
+
+</view>

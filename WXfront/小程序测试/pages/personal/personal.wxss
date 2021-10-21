@@ -1,0 +1,4 @@
+/* pages/personal/personal.wxss */
+.text_list{
+  font-size: larger;
+}
