@@ -12,14 +12,14 @@
     <title>Title</title>
 </head>
 <body>
+<a href="${pageContext.request.contextPath}/input">返回</a><br>
 停车场空闲车位<br>
 <c:forEach items="${List}" var="Integer">
     ${Integer}&nbsp;&nbsp;&nbsp;&nbsp;
-
     <br>
 </c:forEach>
-<br>
-<br> <a href="${pageContext.request.contextPath}/input">返回</a>
+
+<br>添加车位信息(仅供参考)
 <form action="${pageContext.request.contextPath }/addCI" method="post">
     <label>停车位</label><input type="type" name="parking_id" /> <br>
     <label>车牌号</label><input type="type" name="car_number" /> <br>
@@ -27,6 +27,6 @@
     <label>联系电话</label><input type="type" name="phone" /> <br>
     <input type="submit" value="开始停车">
 </form>
-<br> <a href="${pageContext.request.contextPath}/fare">停止停车</a>
+
 </body>
 </html>

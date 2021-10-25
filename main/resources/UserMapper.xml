@@ -62,10 +62,10 @@
     <select id="selectallfare" resultType="po.fare">
         select * from fare
     </select>
-    <select id="getStartTime" parameterType="Integer" resultType="Date">
+    <select id="getStartTime" parameterType="Integer" resultType="String">
         select starttime from fare where parking_id=#{parking_id}
     </select>
-    <select id="getEndTime" parameterType="Integer" resultType="Date">
+    <select id="getEndTime" parameterType="Integer" resultType="String">
         select endtime from fare where parking_id=#{parking_id}
     </select>
     <select id="selectTimeDiff" resultType="Integer" parameterType="Integer" >
@@ -90,7 +90,13 @@
         select fare from fare where parking_id=#{parking_id};
     </select>
 <!--    表history的sql语句 -->
+    <select id="selectAllhistory" resultType="po.history">
+     select * from history
+    </select>
     <insert id="addhistoryinfo" parameterType="po.history">
         INSERT INTO history (car_number, host_name, phone, starttime, endtime, fare) VALUES (#{car_number}, #{host_name}, #{phone}, #{starttime},#{endtime},#{fare});
     </insert>
+    <select id="selecthistoryBycarnumber" parameterType="String" resultType="po.history">
+        select * from history where car_number=#{var}
+    </select>
 </mapper>

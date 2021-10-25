@@ -2,7 +2,9 @@ package po;
 //数据库表fare的实体类
 public class fare {
     private int parking_id;
-
+    private String starttime;
+    private String endtime;
+    private int fare;
     public int getParking_id() {
         return parking_id;
     }
@@ -27,8 +29,6 @@ public class fare {
         this.endtime = endtime;
     }
 
-    private String starttime;
-    private String endtime;
 
     public int getFare() {
         return fare;
@@ -38,7 +38,7 @@ public class fare {
         this.fare = fare;
     }
 
-    private int fare;
+
     public fare(int parking_id,String starttime,String endtime){
         this.parking_id=parking_id;
         this.starttime=starttime;

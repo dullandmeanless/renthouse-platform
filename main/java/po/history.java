@@ -7,8 +7,8 @@ public class history {
     private String car_number;
     private String host_name;
     private Integer phone;
-    private Date starttime;
-    private Date endtime;
+    private String starttime;
+    private String endtime;
     private double fare;
     public Integer getOrder() {
         return order;
@@ -42,19 +42,19 @@ public class history {
         this.phone = phone;
     }
 
-    public Date getStarttime() {
+    public String getStarttime() {
         return starttime;
     }
 
-    public void setStarttime(Date starttime) {
+    public void setStarttime(String starttime) {
         this.starttime = starttime;
     }
 
-    public Date getEndtime() {
+    public String getEndtime() {
         return endtime;
     }
 
-    public void setEndtime(Date endtime) {
+    public void setEndtime(String endtime) {
         this.endtime = endtime;
     }
 

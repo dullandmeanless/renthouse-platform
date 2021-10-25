@@ -7,13 +7,16 @@
     <title>Insert title here</title>
 </head>
 <body>
+<a href="${pageContext.request.contextPath}/input">返回</a><br>
 停车场信息<br>
 <c:forEach items="${InfoList}" var="ParkingInfo">
     ${ParkingInfo.parking_id}&nbsp;&nbsp;&nbsp;&nbsp;
     ${ParkingInfo.parking_status}&nbsp;&nbsp;&nbsp;&nbsp;
    <br>
 </c:forEach>
-<br>
 
+<br> <a href="${pageContext.request.contextPath }/add">添加停车场信息</a>
+<br> <a href="${pageContext.request.contextPath }/update">更新停车场信息</a>
+<br> <a href="${pageContext.request.contextPath }/delete">删除停车场信息</a>
 </body>
 </html>

@@ -10,12 +10,23 @@
 <form action="${pageContext.request.contextPath }/select" method="post">
     <input type="submit" value="查看停车场信息"/>
 </form>
+<form action="${pageContext.request.contextPath }/selectCIALL" method="post">
+    <input type="submit" value="查看车辆信息信息"/>
+</form>
+<form action="${pageContext.request.contextPath }/selectallfare" method="post">
+    <input type="submit" value="查看费用信息"/>
+</form>
+<form action="${pageContext.request.contextPath }/selectAllhistory" method="post">
+    <input type="submit" value="查看历史信息"/>
+</form>
+    <br>
 <br> <a href="${pageContext.request.contextPath }/park">查看空闲车位</a>
-<br> <a href="${pageContext.request.contextPath }/add">添加停车场信息</a>
-<br> <a href="${pageContext.request.contextPath }/update">更新停车场信息</a>
-<br> <a href="${pageContext.request.contextPath }/delete">删除停车场信息</a>
+<br> <a href="${pageContext.request.contextPath }/add">添加信息</a>
+<br> <a href="${pageContext.request.contextPath }/update">更新信息</a>
+<br> <a href="${pageContext.request.contextPath }/delete">删除信息</a>
+<br>
 <form action="${pageContext.request.contextPath }/selectPLStatusById" method="post">
-    <label>编号</label><input type="type" name="parking_id" /> <br>
+    <label>编号</label><input type="type" name="parking_id" />
     <input type="submit" value="停车场编号查询车位状态">
 </form><br>
 <form action="${pageContext.request.contextPath }/getfareById" method="post">
@@ -25,20 +36,18 @@
 <br>
 <form action="${pageContext.request.contextPath }/getParkingIdByUserId" method="post">
     <label>编号</label><input type="type" name="user_id" /> <br>
-    <input type="submit" value="根据用户号查询费车位号">
+    <input type="submit" value="根据用户号查询车位号">
 </form>
-<br
-><br>
-
-<form action="${pageContext.request.contextPath }/selectCI" method="post">
-    <input type="submit" value="查看车辆信息"/>
-</form>
-<br> <a href="${pageContext.request.contextPath}/add">添加车辆信息</a>
-<br> <a href="${pageContext.request.contextPath}/update">更新车辆信息</a>
-<br> <a href="${pageContext.request.contextPath}/delete">删除车辆信息</a>
+<br>
+    <form action="${pageContext.request.contextPath }/selecthistoryBycarnumber" method="post">
+        <label>编号</label><input type="type" name="car_number" /> <br>
+        <input type="submit" value="查看"/>
+    </form>
 <%--<form action="${pageContext.request.contextPath }/selectPLStatusById" method="post">--%>
 <%--    <label>编号</label><input type="type" name="parking_id" /> <br>--%>
 <%--    <input type="submit" value="停车场编号查询车位状态">--%>
 <%--</form>--%>
+
+
 </body>
 </html>

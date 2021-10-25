@@ -23,12 +23,14 @@ public class UserServiceImpl  implements UserService{
         map.put("userList",list);
         return JSON.toJSONString(map);//将对象转成JSON字符串
     }
+    //后端提取数据并包装成JSON字符串形式
     public String getcarinfo(){
         List<carinfo> list=userDao.selectCIAll();
         Map<String,Object> map= new HashMap<String,Object>();
         map.put("carinfoList",list);
         return JSON.toJSONString(map);//将对象转成JSON字符串
     }
+    //后端提取数据并包装成JSON字符串形式
     public String getfareinfo(){
         List<fare> list=userDao.selectallfare();
         Map<String,Object> map= new HashMap<String,Object>();
@@ -41,6 +43,12 @@ public class UserServiceImpl  implements UserService{
         map.put("historyList",list);
         return JSON.toJSONString(map);//将对象转成JSON字符串
     }
+    public String sendhistoryBycarnumber(String car_number){
+        List<history> list=userDao.selecthistoryBycarnumber(car_number);
+        Map<String,Object> map= new HashMap<String,Object>();
+        map.put("historyList",list);
+        return JSON.toJSONString(map);//将对象转成JSON字符串
+    }
     public int count(int minute){
 //        if(minute<60)
 //            return 0;
@@ -49,8 +57,12 @@ public class UserServiceImpl  implements UserService{
        else return minute*2;
     }
     //其他查询语句
+    @Override
     public List<Integer>  showFreeParking_id(){return userDao.showFreeParking_id();}
     public  double pay(Integer var1){return userDao.pay(var1);}
+
+
+
     //表Parkinglot的sql语句
     @Override
     public List<Parkinginfo> selectPLAllstatus(){return userDao.selectPLAllstatus(); }
@@ -103,27 +115,39 @@ public class UserServiceImpl  implements UserService{
         return userDao.selectTimeDiff(var1);
    }
     @Override
-   public Date getStartTime(Integer var1){
+   public String getStartTime(Integer var1){
         return userDao.getStartTime(var1);
     }
     @Override
-    public Date getEndTime(Integer var1){
+    public String getEndTime(Integer var1){
         return userDao.getEndTime(var1);
     }
     @Override
     public int updateStartTime(Integer var1){return userDao.updateStartTime(var1);}
+    @Override
     public int updateEndTime(Integer var1){return userDao.updateEndTime(var1);}
+    @Override
     public  int addfareinfo(Integer var1){return userDao.addfareinfo(var1);}
+    @Override
     public  int deletefareinfo(Integer var1){return userDao.deletefareinfo(var1);}
+    @Override
     public int  updatefareinfo(fare fi){return userDao.updatefareinfo(fi);}
+    @Override
     public int getfareById(Integer var1){return userDao.getfareById(var1);}
-    public   String getcarnumberByParkingId(Integer var1){return userDao.getcarnumberByParkingId(var1);}
-    public   String gethostnameByParkingId(Integer var1){return userDao.gethostnameByParkingId(var1);}
+    @Override
+    public String getcarnumberByParkingId(Integer var1){return userDao.getcarnumberByParkingId(var1);}
+    public String gethostnameByParkingId(Integer var1){return userDao.gethostnameByParkingId(var1);}
     public int getphoneByParkingId(Integer var1){return userDao.getphoneByParkingId(var1);}
     //表history的sql语句
+    @Override
     public List<history>selectAllhistory(){return userDao.selectAllhistory();}
+    @Override
    public int addhistoryinfo(history fi){return userDao.addhistoryinfo(fi);}
+    @Override
     public  int deletehistoryinfo(Integer var1){return userDao.deletehistoryinfo(var1);}
+    @Override
     public int updatehistoryinfo(history fi){return userDao.updatehistoryinfo(fi);}
+    @Override
+    public  List<history> selecthistoryBycarnumber(String car_number){return userDao.selecthistoryBycarnumber(car_number);}
 
 }

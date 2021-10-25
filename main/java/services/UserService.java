@@ -9,6 +9,7 @@ public interface UserService {
     //其他查询语句
     List<Integer> showFreeParking_id();//查询空闲车位 返回List
     double pay(Integer var1);   //缴费功能 参数是停车时间 返回需要缴费的金额
+    String sendhistoryBycarnumber(String car_number);
     int count(int minute);
     String getParkinglotinfo();
     String getcarinfo();
@@ -36,8 +37,8 @@ public interface UserService {
     //表fare的sql语句
     List<fare> selectallfare();
     int selectTimeDiff(Integer var1);      //根据车位号返回停车时长
-    Date getStartTime(Integer var1);        //获取该车位号 开始停车的时间
-    Date getEndTime(Integer var1);           //获取该车位号 结束停车的时间
+    String getStartTime(Integer var1);        //获取该车位号 开始停车的时间
+    String getEndTime(Integer var1);           //获取该车位号 结束停车的时间
     int updateStartTime(Integer var1);         //将该车位号 开始停车的时间存进数据库
     int updateEndTime(Integer var1);          //将该车位号 结束停车的时间存进数据库
     int addfareinfo(Integer var1);
@@ -50,4 +51,5 @@ public interface UserService {
  int addhistoryinfo(history fi);
  int deletehistoryinfo(Integer var1);
  int updatehistoryinfo(history fi);
+    List<history> selecthistoryBycarnumber(String car_number);
 }

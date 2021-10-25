@@ -11,15 +11,17 @@
     <title>Title</title>
 </head>
 <body>
+<a href="${pageContext.request.contextPath}/input">返回</a><br>
 添加停车场信息
 <br> <a href="${pageContext.request.contextPath}/input">返回</a>
 <form action="${pageContext.request.contextPath }/addPLinfo" method="post">
     <label>状态</label><input type="type" name="parking_status" /> <br>
     <input type="submit" value="确认添加">
 </form>
+
 <br>
 添加车辆信息
-<br> <a href="${pageContext.request.contextPath}/input">返回</a>
+<br>
 <form action="${pageContext.request.contextPath }/addCI" method="post">
     <label>车位编号</label><input type="type" name="parking_id" /> <br>
     <label>车牌</label><input type="type" name="car_number" /> <br>

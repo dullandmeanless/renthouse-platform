@@ -31,8 +31,8 @@ public interface UserDao {
     //表fare的sql语句
     List<fare> selectallfare();    //查询所有停车费用信息 返回list
     int selectTimeDiff(Integer var1);      //根据车位号返回停车时长
-    Date getStartTime(Integer var1);        //获取该车位号 开始停车的时间
-   Date getEndTime(Integer var1);           //获取该车位号 结束停车的时间
+    String getStartTime(Integer var1);        //获取该车位号 开始停车的时间
+    String getEndTime(Integer var1);           //获取该车位号 结束停车的时间
    int updateStartTime(Integer var1);         //将该车位号 开始停车的时间存进数据库
     int updateEndTime(Integer var1);          //将该车位号 结束停车的时间存进数据库
     int addfareinfo(Integer var1);    //添加车位号位var的费用信息
@@ -44,5 +44,5 @@ public interface UserDao {
     int addhistoryinfo(history fi);   //增加历史记录
     int deletehistoryinfo(Integer var1);//删除历史记录
     int updatehistoryinfo(history fi);//更新历史记录
-
+ List<history> selecthistoryBycarnumber(String car_number);
 }
