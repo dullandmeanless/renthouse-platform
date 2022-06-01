@@ -1,5 +1,0 @@
-<wxs src="1.wxs" module="tools"/>
-<view>
-  <view>您已经停车：{{tools.timeFormat(12,00)}}</view>
-</view>
- 

@@ -1,4 +1,0 @@
-<!-- 新基础页面测试 -->
-<input type="text" placeholder="请输入姓名" bindinput="getName"></input>
-<text>用户输入的名字是：{{name}}</text>
-

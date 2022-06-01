@@ -1,8 +1,0 @@
-var time = function(endtime){
-  var bijiao = getDate(endtime) - getDate(21,00); //判断结束时间减去当前时间 ，如果当前时间大于0则为True
-  return bijiao > 0 ? true : false;
-}
- 
-module.exports = {
-  time: time
-}
