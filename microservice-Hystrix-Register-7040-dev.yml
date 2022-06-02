@@ -1,0 +1,30 @@
+server:
+  port: 7040
+spring:
+  application:
+    name: eureka-client-register
+  datasource:
+    url: jdbc:mysql://172.23.63.152:3306/renthouse?useSSL=false&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+logging:
+  level:
+    cn.itcast: debug
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
+EUREKA-CLIENT-ORDER:
+  ribbon:
+    NFLoadBBalancerRuleClassName: com.netflix.loadbalancer.RandonRule
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #仅控制台输出的日志
