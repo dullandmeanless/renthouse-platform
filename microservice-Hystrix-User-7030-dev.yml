@@ -21,6 +21,6 @@ feign:
   hystrix:
     enabled: true
 
-eureka-client-user
+eureka-client-user:
   ribbon:
     NFLoadBBalancerRuleClassName: com.netflix.loadbalancer.RandonRule
