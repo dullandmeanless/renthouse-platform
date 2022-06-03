@@ -4,18 +4,12 @@ spring:
   application:
     name: eureka-client-order
   datasource:
-    url: jdbc:mysql://172.23.63.152:3306/renthouse?useSSL=false&useSSL=false&serverTimezone=GMT%2B8
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://172.23.63.152:3306/renthouse?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-    register-with-eureka: true
-    fetch-registry: true
+
 
 logging:
   level:
@@ -27,6 +21,6 @@ EUREKA-CLIENT-ORDER:
     NFLoadBBalancerRuleClassName: com.netflix.loadbalancer.RandonRule
 mybatis-plus:
   configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #?????????
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl 
 
 
