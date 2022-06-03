@@ -1,0 +1,28 @@
+server:
+  port: 7090
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://172.23.63.152:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    ip-address: 172.23.63.152
+    instance-id: Feign-Hystrix-7090
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
+
+spring:
+  application:
+    name: Feign-Hystrix-7090
+ribbon:
+  eureka:
+    enabled: true
+# 开启feign支持hystrix，默认关闭
+feign:
+  hystrix:
+    enabled: true
+  circuitbreaker:
+    enabled: true
