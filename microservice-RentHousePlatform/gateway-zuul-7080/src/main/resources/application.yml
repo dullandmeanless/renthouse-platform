@@ -1,0 +1,40 @@
+server:
+  port: 7080
+spring:
+  application:
+    name: gateway-zuul-7080
+zuul:
+  host:
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000
+  retryable: true
+  sensitiveHeaders: Cookie,Set-Cookie
+  ignored-headers: Access-Control-Allow-Credentials, Access-Control-Allow-Origin, Access-Control-Allow-Methods
+  routes:
+    order:
+      path: /order/**
+      url: http://localhost:7090
+    user:
+      path: /user/**
+      url: http://localhost:7090
+    product:
+      path: /product/**
+      url: http://localhost:7090
+#  routes:
+#    order:
+#      path: /order/**
+#      serviceId: FEIGN-HYSTRIX-7090
+#    user:
+#      path: /user/**
+#      serviceId: FEIGN-HYSTRIX-7090
+#    product:
+#      path: /product/**
+#      serviceId: FEIGN-HYSTRIX-7090
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
